@@ -2,26 +2,19 @@ sudo: false
 language: php
 dist: trusty
 
-matrix:
-  fast_finish: true
-  include:
-    - php: 7.0
-    - php: 7.1
-    - php: 7.2
-    - php: nightly
-
-  allow_failures:
-    - php: nightly
+php:
+- 7.0
+- 7.1
+- 7.2
+- nightly
 
 jobs:
   include:
-    - stage: lint
-      script: php -l
     - stage: check
-      script: phpcs
+      script: vendor/bin/phpcs
     - stage: test
       script:
-      - phpunit
+      - vendor/bin/phpunit
     - stage: deploy
       script: skip
       deploy:
@@ -33,7 +26,6 @@ jobs:
           tags: true
 
 stages:
-  - lint
   - check
   - test
   - name: deploy

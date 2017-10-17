@@ -11,8 +11,10 @@ use Composer\Plugin\PluginInterface;
 
 class Plugin implements PluginInterface, EventSubscriberInterface
 {
+    /** @var  Composer */
     private $composer;
 
+    /** @var  IOInterface */
     private $io;
 
     public function activate(Composer $composer, IOInterface $io)
@@ -35,4 +37,3 @@ class Plugin implements PluginInterface, EventSubscriberInterface
         // Do something with the event.
     }
 }
-

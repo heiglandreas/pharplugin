@@ -1,0 +1,20 @@
+{
+  "name": "org_heigl/phar-plugin",
+  "type": "composer-plugin",
+  "require": {
+    "composer-plugin-api": "^1.1"
+  },
+  "extra": {
+    "class": "Org_Heigl\\PharPlugin\\Plugin"
+  },
+  "autoload" : {
+    "psr4" : {
+      "Org_Heigl\\PharPlugin\\" : "src/"
+    }
+  },
+  "autoload-dev" : {
+    "psr4" : {
+      "Org_Heigl\\PharPluginTest\\" : "tests/"
+    }
+  }
+}

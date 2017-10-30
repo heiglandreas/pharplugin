@@ -8,12 +8,12 @@
     "class": "Org_Heigl\\PharPlugin\\Plugin"
   },
   "autoload" : {
-    "psr4" : {
+    "psr-4" : {
       "Org_Heigl\\PharPlugin\\" : "src/"
     }
   },
   "autoload-dev" : {
-    "psr4" : {
+    "psr-4" : {
       "Org_Heigl\\PharPluginTest\\" : "tests/"
     }
   }

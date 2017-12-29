@@ -4,6 +4,9 @@
   "require": {
     "composer-plugin-api": "^1.1"
   },
+  "require-dev" : {
+    "composer/composer" : "^1.0"
+  },
   "extra": {
     "class": "Org_Heigl\\PharPlugin\\Plugin"
   },
@@ -15,6 +18,20 @@
   "autoload-dev" : {
     "psr-4" : {
       "Org_Heigl\\PharPluginTest\\" : "tests/"
+    }
+  },
+  "config" : {
+    "phar-plugin" : {
+      "exclude-dev" : [
+        "composer/composer"
+      ]
+    }
+  },
+  "extra" : {
+    "releases": {
+      "binary-path": "https://github.com/heiglandreas/plugintest/releases/download/%version%/junitdiff.phar",
+      "signature-path": "https://github.com/heiglandreas/plugintest/releases/download/%version%/junitdiff.phar.asc",
+      "signed-with": "gpg"
     }
   }
 }

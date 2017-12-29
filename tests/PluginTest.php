@@ -29,7 +29,19 @@
 
 namespace Org_Heigl\PharPluginTest;
 
-class PluginTest extends \PHPUnit_Framework_TestCase
-{
+use PHPUnit\Framework\TestCase;
 
+class PluginTest extends TestCase
+{
+    public function testActivate()
+    {
+    }
+
+    public function testGetSubscribedEvents()
+    {
+    }
+
+    public function testOnCommandCall()
+    {
+    }
 }

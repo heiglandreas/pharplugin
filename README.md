@@ -42,12 +42,32 @@ At the moment you will need to add them within the `config`-section like this:
 
 ```json
 {
-  "config" : {
+  "extras" : {
     "phar-plugin" : {
       "exclude-packages" : [
         "namespace/package"
-      ]
+      ],
     }
   }
 }
 ```
+
+## Dev-Tools provider
+
+You can expose a path where your phar-files can be found within your packages `composer.json`like this:
+
+```json
+{
+  "extras" : {
+    "phar" : {
+      "path" : "https://github.com/user/package/releases/download/%version%/example.phar",
+      "signature" : "https://github.com/user/package/releases/download/%version%/example.phar.asc",
+      "signature-algorithm" : "[gpg|openssl|none]"
+    }
+  } 
+}
+```
+
+The string `%version%` will be replaced with the requested package version. There is an idea to allow different paths for different versions, but we'll cross that bridge when we reach it…
+
+At least that'S the current plan…
